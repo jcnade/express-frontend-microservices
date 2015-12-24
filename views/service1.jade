@@ -1,0 +1,10 @@
+#page
+    h3 Service 1
+    p CSS, JS, text and  HTML from micro service 1
+
+
+script.
+    var me           = document.currentScript.ownerDocument;
+    var page         = me.querySelector('#page');
+    var service1     = document.querySelector('#service1');
+    service1.appendChild(page.cloneNode(true));

@@ -1,0 +1,13 @@
+.idea
+node_modules
+target/*.xml
+target/*.deb
+coverage/
+*.iml
+*.log
+*.log-*
+views/version.jade
+config/runtime.json
+config/runtime.json.*
+delme
+delme/*
