@@ -1,10 +1,10 @@
 
 #page
-    h3 Service 2
-    p CSS, JS, text and  HTML from micro service 2
+    h3 Local Components
+    p With SS, JS, text and  HTML from a local jade file.
 
 script.
     var me           = document.currentScript.ownerDocument;
     var page         = me.querySelector('#page');
-    var service2     = document.querySelector('#service2');
+    var service2     = document.querySelector('#local');
     service2.appendChild(page.cloneNode(true));

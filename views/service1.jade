@@ -1,7 +1,12 @@
-#page
-    h3 Service 1
-    p CSS, JS, text and  HTML from micro service 1
 
+#page
+    h3 Micro Service 1
+    p Hello There, I'm a separate front end microservice, i'm running on a separate node.js process and acte like an html page for web-componant.
+
+    form(method='POST',action="/service1" )
+        input(name='foo',value='bar')
+        br
+        input(type="submit", value='send')
 
 script.
     var me           = document.currentScript.ownerDocument;

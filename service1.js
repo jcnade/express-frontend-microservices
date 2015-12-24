@@ -6,25 +6,29 @@ var bodyParser = require('body-parser');
  */
 
 var app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(bodyParser.json())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.use(express.static('public'));
 app.set('views', './views')
 app.set('view engine', 'jade');
 
 
-app.get('/', function (req, res) {
-    res.render('index',{})
-});
-
 app.get('/service1', function (req, res) {
     res.render('service1',{})
 });
 
-app.get('/service2', function (req, res) {
-    res.render('service2',{})
+app.post('/service1', function (req, res) {
+    res.send(req.body)
 });
 
-var server = app.listen(3000, function () {
+
+var server = app.listen(3001, function () {
     var host = server.address().address;
     var port = server.address().port;
     console.log('Example app listening at http://%s:%s', host, port)
